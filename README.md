@@ -34,3 +34,4 @@ startActivity(i);
 | Nexus 5    | 4.4.2  | ✓      | ART     |
 | Moto X     | 4.4.3  | x      | ART     |
 | Nexus 5    | 4.4.3  | ✓      | ART     |
+| Nexus 5    | 4.4.3  | ✓      | ART     |
