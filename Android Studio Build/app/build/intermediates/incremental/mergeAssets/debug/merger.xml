@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/kyle/Documents/Development/android_bt_manager/Android Studio Build/app/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/kyle/Documents/Development/android_bt_manager/Android Studio Build/app/src/debug/assets" />
+    </dataSet>
+
+</merger>
