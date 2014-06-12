@@ -11,11 +11,10 @@
 	<uses-permission 
 	    android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <application
+    <application 
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:label="@string/app_name" >
         <activity
             android:name="com.prndl.bt_manager.MainActivity"
             android:label="@string/app_name" >
@@ -25,7 +24,8 @@
             </intent-filter>
         </activity>
         
-        <service android:name=".Crash" android:label="Crash">
+        <service android:name=".Crash" android:label="Crash" 
+            android:exported="false" >
 		    <intent-filter>
 		        <action android:name="com.prndl.bt_manager.Crash" />
 		    </intent-filter>
@@ -34,12 +34,12 @@
 		<receiver
 		    android:name="com.prndl.bt_manager.BootReceiver"
 		    android:enabled="true"
-		    android:exported="true"
+		    android:exported="false"
 		    android:label="BootReceiver">
 		    <intent-filter>
 		        <action android:name="android.intent.action.BOOT_COMPLETED" />
 		    </intent-filter>
-		</receiver>
+		</receiver> 
     </application>
 
 </manifest>
