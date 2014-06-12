@@ -1,7 +1,9 @@
 android_bt_manager
 ==================
 
-This Android 4.x application causes the Android runtime to crash Android.io by making a service call to bluetooth_manager. 
+This Android 4.x application causes the Android runtime to crash Android.io by making a service call to bluetooth_manager.
+
+**WARNING:** This application causes your Android 4.x device to crash 15 seconds after startup as well as 15 seconds after each reboot. Do not run this application without the delay in `MainActivity`. 
 
 **How it works:**
 - `MainActivity` sends service call to `IBluetoothManager`: `Runtime.getRuntime().exec("service call bluetooth_manager 1");`
@@ -33,5 +35,4 @@ startActivity(i);
 | ---------- |:------:|:------:|:-------:|
 | Nexus 5    | 4.4.2  | ✓      | ART     |
 | Moto X     | 4.4.3  | x      | ART     |
-| Nexus 5    | 4.4.3  | ✓      | ART     |
 | Nexus 5    | 4.4.3  | ✓      | ART     |
