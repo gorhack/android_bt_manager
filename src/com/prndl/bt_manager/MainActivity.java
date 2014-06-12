@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,7 @@ public class MainActivity extends Activity {
         
         //// Lines 23-28 will be my entire application.
         // bt_manager started
-        Toast.makeText(this, "Started!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Started!", Toast.LENGTH_SHORT).show();
         // set delay
         
         // call Runtime.getRuntime().exec("service call bluetooth_manager 1");
@@ -31,15 +30,6 @@ public class MainActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
     @Override
@@ -75,7 +65,8 @@ public class MainActivity extends Activity {
     	try {
 			Runtime.getRuntime().exec("service call bluetooth_manager 1");
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace(); // too bad it doesn't catch: E/AndroidRuntime(15596): *** FATAL EXCEPTION IN SYSTEM PROCESS: android.io
+
 		}
     }
 

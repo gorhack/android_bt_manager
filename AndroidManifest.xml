@@ -25,13 +25,20 @@
             </intent-filter>
         </activity>
         
-        #this is where I am having trouble: 
-		<receiver android:enabled="true" android:name="com.prndl.bt_manager.BootReceiver"
-		    android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-            <intent-filter>
-				<action android:name="android.intent.action.BOOT_COMPLETED" />
-				<category android:name="android.intent.category.DEFAULT" />
-			</intent-filter>
+        <service android:name=".Crash" android:label="Crash">
+		    <intent-filter>
+		        <action android:name="com.prndl.bt_manager.Crash" />
+		    </intent-filter>
+		</service>
+
+		<receiver
+		    android:name="com.prndl.bt_manager.BootReceiver"
+		    android:enabled="true"
+		    android:exported="true"
+		    android:label="BootReceiver">
+		    <intent-filter>
+		        <action android:name="android.intent.action.BOOT_COMPLETED" />
+		    </intent-filter>
 		</receiver>
     </application>
 
