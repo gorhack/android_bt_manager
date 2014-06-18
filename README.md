@@ -50,3 +50,21 @@ startActivity(i);
 | Moto X        | 4.4.3  | x      | ART     |
 | Nexus 5       | 4.4.3  | ✓      | ART     |
 
+**What is "`bluetooth_manager 1`"?**
+
+This service call is a request to register a bluetooth adapter. In `IBluetoothManager.java` it does the following: 
+
+```Java
+case TRANSACTION_registerAdapter:
+{
+    data.enforceInterface(DESCRIPTOR);
+    android.bluetooth.IBluetoothManagerCallback _arg0;
+    _arg0 = android.bluetooth.IBluetoothManagerCallback.Stub.asInterface(data.readStrongBinder());
+    android.bluetooth.IBluetooth _result = this.registerAdapter(_arg0);
+    reply.writeNoException();
+    reply.writeStrongBinder((((_result!=null))?(_result.asBinder()):(null)));
+    return true;
+}
+```
+
+The OS is also unable to handle request to unregister an adapter as well as both register and unregister state changes. More information can be found in the `IBluetoothManager.java` [file](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/4.4.2_r1/android/bluetooth/IBluetoothManager.java#IBluetoothManager).
