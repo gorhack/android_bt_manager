@@ -46,13 +46,15 @@ startActivity(i);
 
 |   Device      |   OS   | Rooted | Runtime |
 | ------------- |:------:|:------:|:-------:|
-| Nexus 5       | 4.4.2  | ✓      | ART     |
-| Moto X        | 4.4.3  | x      | ART     |
-| Nexus 5       | 4.4.3  | ✓      | ART     |
+| Nexus 5       | 4.4.2  | ✓      | Dalvik  |
+| Moto X        | 4.4.3  | x      | Dalvik  |
+| Nexus 5       | 4.4.3  | ✓      | Dalvik  |
 
 **What is "`bluetooth_manager 1`"?**
 
-This service call is a request to register a bluetooth adapter. In `IBluetoothManager.java` it does the following: 
+This is a method call to register a bluetooth adapter. `static final int TRANSACTION_registerAdapter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);`
+
+In `IBluetoothManager.java` it does the following: 
 
 ```Java
 case TRANSACTION_registerAdapter:
